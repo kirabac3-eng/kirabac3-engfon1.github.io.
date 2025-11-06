@@ -1,0 +1,1239 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Свадьба</title>
+  <style>
+    
+    .title {
+      color: #222; /* ярко-белый текст */
+      font-size: 46px; /* чуть больше для выразительности */
+      font-weight: 700;
+      line-height: 1.3;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 15px;
+    }
+	.hero .title {
+  margin-top: 40px;  /* оптимальный отступ для серого блока */
+  margin-bottom: 10px;
+}	
+    .title .date {
+      display: block;
+      font-size: 28px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.85); /* чуть мягче белого */
+    }
+
+    .top-note {
+      color: #ffffff;
+      font-size: 60px; /* увеличили размер */
+      font-weight: 500;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+  <!-- Шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+  <style>
+   :root {
+   --bg: #f2f2f2;         /* приятный серый фон */
+   --text: #1f1f1f;      /* почти белый текст для контраста */
+  --accent: #333333;   /* белый акцент */
+  --muted: #aaaaaa;    /* светло-серый для второстепенных надписей */
+  --heart: #e63946;    /* насыщенно-красное сердце */
+}
+
+/* Основной стиль страницы */
+
+}
+
+/* ❤️ Анимация пульсирующего сердца */
+.heart {
+  color: var(--heart);
+  display: inline-block;
+  font-size: 28px;
+  animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 20%, 60%, 100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.3);
+  }
+  80% {
+    transform: scale(1.15);
+  }
+}
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: url("fon5.jpeg") no-repeat center center fixed;
+      background-size: cover;
+     color: var(--text);
+     font-family: 'EB Garamond', serif;
+      text-align: center;
+    }
+
+
+    section {
+      padding: 60px 20px;
+      transition: all 0.5s ease-in-out;
+    }
+
+    h1.title {
+      font-family: "Great Vibes", cursive;
+      font-size: 56px;
+      margin: 10px 0;
+      color: var(--accent);
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      color: var(--accent);
+    }
+
+    p.lead {
+      max-width: 700px;
+      margin: 0 auto 20px auto;
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* HERO блок */
+.hero {
+  background-color: transparent; /* используем общий фон */
+  color: #222;
+  padding: 0px 20px 60px;
+  position: relative;
+}
+
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: none;
+      z-index: 0;
+    }
+
+    .hero .wrap {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .hero .top-note {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 18px;
+      color: #222;
+    }
+
+    .hero .photos {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+   .hero .face {
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: none;
+  background: transparent; /* убираем белый фон */
+}
+
+.hero .face img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.hero .face .name {
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000; /* белый текст, если фон тёмный */
+  font-family: 'EB Garamond', serif;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.1); /* чтобы текст читался */
+}
+
+
+
+    .calendar-block {
+      margin-top: 20px;
+    }
+.month-title {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-style: uppercase; /* изящный наклон */
+  text-transform: uppercase; /* все буквы заглавные */
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+
+    .weekdays, .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 44px);
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .weekdays {
+      text-transform: uppercase;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+	.weekdays div {
+	 color: #555; /* чуть темнее серый */
+	 font-weight: 500;
+	}
+    .day, .mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.3);
+      font-weight: 500;
+      position: relative;
+    }
+
+    .mark svg {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      fill: var(--heart);
+      z-index: 0;
+      animation: pulse 1.5s infinite;
+    }
+
+    .mark span {
+      position: relative;
+      z-index: 1;
+      font-weight: 700;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Общие стили для секций */
+    .schedule-item {
+      font-size: 18px;
+      margin-bottom: 22px;
+      color: var(--muted);
+    }
+
+    .time {
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .palette {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .color {
+      width: 88px;
+      height: 88px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    #details p {
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    form.rsvp {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: left;
+      color: var(--text);
+      background: rgba(255,255,255,0.1);
+      padding: 22px 24px;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    form.rsvp p { margin-bottom: 20px; line-height:1.6;}
+    form.rsvp label { display: block; margin-bottom: 6px; font-size: 15px;}
+    form.rsvp input[type=text] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.2);
+      background: #fff;
+      color: #222;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+    .radio-group, .checkbox-group { margin-bottom: 16px;}
+    .radio-group label, .checkbox-group label { display: block; margin-bottom: 10px; cursor: pointer;}
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      display: block;
+      margin: 0 auto;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: #b9824c;}
+    .success {
+      display: none;
+      background: rgba(22,100,22,0.12);
+      color: #b9f0b9;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+      text-align: center;
+    }
+	/* === БЛОК ОТСЧЁТА ВРЕМЕНИ === */
+#countdown {
+  margin-top: 10px; /* 🔼 подняли таймер выше */
+  padding-top: 10px;
+}
+
+#countdown h2 {
+  color: #222; /* цвет заголовка */
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.timer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer div span {
+  font-size: 30px;
+  font-weight: 700;
+  color: #222; /* цифры — тёмные */
+}
+
+/* Подписи под цифрами — серые как подзаголовки */
+.timer div {
+  color: #777; /* ← вот этот цвет сделает надписи серыми */
+}
+
+    @media(max-width:768px){
+      .hero .face { width: 150px; }
+      .day, .mark { width: 36px; height: 36px; }
+      .mark svg { width: 36px; height: 36px; }
+      .timer { flex-direction: column; gap:10px;}
+    }
+	/* === АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ И ПЛАНШЕТЫ === */
+@media (max-width: 1024px) {
+  .hero .wrap {
+    padding: 40px 10px;
+  }
+
+  .palette {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 550px;
+  }
+
+  .palette .color {
+    width: 230px;
+  }
+
+  .slider {
+    width: 240px;
+    height: 340px;
+  }
+
+  .slides img {
+    width: 240px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1.title {
+    font-size: 38px;
+  }
+
+  .hero .face {
+    width: 150px;
+  }
+
+  .palette {
+    grid-template-columns: 1fr;
+    max-width: 260px;
+  }
+
+  .palette .color {
+    width: 220px;
+  }
+
+  .slider {
+    width: 220px;
+    height: 310px;
+  }
+
+  .slides img {
+    width: 220px;
+    height: 310px;
+  }
+
+  .slider button {
+    font-size: 20px;
+    padding: 4px 8px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+</script>
+
+<!-- 🎵 Музыка -->
+<audio id="bgMusic" loop>
+  <source src="WH.mp3" type="audio/mpeg">
+  Ваш браузер не поддерживает аудио.
+</audio>
+
+<!-- 🔘 Кнопка управления музыкой -->
+<button id="musicToggle" title="Включить или выключить музыку">II</button>
+
+<style>
+  #musicToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: background 0.3s, transform 0.2s;
+    z-index: 2000;
+  }
+
+  #musicToggle:hover {
+    background: #f2f2f2;
+    transform: scale(1.1);
+  }
+
+  #musicToggle:active {
+    transform: scale(0.95);
+  }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const audio = document.getElementById("bgMusic");
+  const btn = document.getElementById("musicToggle");
+
+  // 🔹 Попытка автозапуска музыки
+  audio.play().catch(() => {
+    // Если браузер блокирует — ждём первого клика
+    document.addEventListener("click", () => {
+      audio.play();
+      btn.textContent = "II";
+    }, { once: true });
+  });
+
+  // 🔹 Управление кнопкой "Пауза / Играть"
+  btn.addEventListener("click", function() {
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = "II"; // Музыка играет
+    } else {
+      audio.pause();
+      btn.textContent = "▶"; // Музыка на паузе
+    }
+  });
+});
+</script>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="title">
+    <span class="date"></span>
+</h1>
+<div class="top-note">Узнаёте этих пупсов?</div>
+
+      <div class="photos">
+  <div class="face">
+    <img src="d4.jpg" alt="Данил">
+    <p class="name">Данил</p>
+  </div>
+  <div class="face">
+    <img src="o1.jpg" alt="Оля">
+    <p class="name">Оля</p>
+  </div>
+</div>
+<p class="phrase">
+  И вот уже совсем скоро состоится<br>
+  самое важное событие в нашей<br>
+  жизни — мы станем одной<br>
+  большой семьёй!
+</p>
+
+      <div class="calendar-block">
+	  <h2 class="month-title">ИЮЛЬ</h2>
+        <div class="weekdays">
+          <div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
+        </div>
+        <div class="calendar">
+          <div class="day">27</div>
+          <div class="day">28</div>
+          <div class="day">29</div>
+          <div class="mark">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-6.2-4.35-9.33-7.78C-1.18 8.54 3.64 2 8.9 5.17c1.21.77 2.1 1.98 3.1 3.11 1-1.13 1.89-2.34 3.1-3.11C20.36 2 25.18 8.54 21.33 13.22 18.2 16.65 12 21 12 21z"/></svg>
+            <span>30</span>
+          </div>
+          <div class="day">31</div>
+          <div class="day">1</div>
+          <div class="day">2</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Место проведения -->
+<section id="place">
+  <h2>МЕСТО ПРОВЕДЕНИЯ</h2>
+  <div class="venue-info">
+    <p>Город Томск,Улица Сенная Курья, 9<br>Парад Парк Отель</p>
+  </div>
+</section>
+
+<style>
+  #place {
+    text-align: center;
+    margin: 20px 0 10 px;
+  }
+
+  #place h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .venue-info p {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #333;
+  }
+</style>
+<section id="schedule">
+  <div class="schedule-item">
+    <span class="time">16:00</span>
+    <span class="event">СБОР ГОСТЕЙ</span>
+    <span class="desc">
+      Время пролетит незаметно<br>
+      за игристым и общением<br>
+      с другими гостями
+    </span>
+  </div>
+
+  <div class="schedule-item">
+    <span class="time">16:30</span>
+    <span class="event">ВЫЕЗДНАЯ ЦЕРЕМОНИЯ</span>
+    <span class="desc">
+      Вы станете свидетелем создания<br>
+      новой семьи — нашей семьи
+    </span>
+  </div>
+
+  <div class="schedule-item">
+    <span class="time">17:00</span>
+    <span class="event">НАЧАЛО БАНКЕТА</span>
+    <span class="desc">
+      Будет много танцев, веселья,<br>
+      поздравлений и, конечно, любви
+    </span>
+  </div>
+
+  <div class="schedule-item">
+    <span class="time">23:00</span>
+    <span class="event">ЗАВЕРШЕНИЕ ВЕЧЕРА</span>
+    <span class="desc">
+      К сожалению,<br>
+      даже такой прекрасный вечер<br>
+      может закончиться
+    </span>
+  </div>
+</section>
+
+<style>
+  #schedule {
+    text-align: center;
+    margin: 60px auto;
+    color: #222;
+    font-family: 'EB Garamond', serif;
+  }
+
+  .schedule-item {
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .schedule-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .schedule-item .time {
+    display: block;
+    font-size: 40px;
+    font-weight: 600;
+    color: #222;
+  }
+
+  .schedule-item .event {
+    display: block;
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    color: #222;
+  }
+
+  .schedule-item .desc {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+    color: #777;
+    line-height: 1.4;
+  }
+</style>
+
+<script>
+  // 🔹 Анимация появления при прокрутке
+  const items = document.querySelectorAll('.schedule-item');
+
+  function showItemsOnScroll() {
+    const triggerBottom = window.innerHeight * 0.9;
+
+    items.forEach(item => {
+      const boxTop = item.getBoundingClientRect().top;
+      if (boxTop < triggerBottom) {
+        item.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', showItemsOnScroll);
+  showItemsOnScroll();
+</script>
+
+
+
+<style>
+  #schedule {
+    text-align: center;
+    margin: 40px auto;
+    color: #222 !important; /* 🖤 теперь точно будет тёмно-серый (почти чёрный) */
+    font-family: 'EB Garamond', serif;
+  }
+
+  .schedule-item {
+    margin-bottom: 40px;
+  }
+
+  .schedule-item .time {
+    display: block;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1;
+    color: #222 !important; /* дублируем на случай перекрытия */
+  }
+
+  .schedule-item .event {
+    display: block;
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    color: #222 !important;
+  }
+</style>
+
+
+
+  <!-- Таймер -->
+  <section id="countdown">
+    <h2>ДО СВАДЬБЫ ОСТАЛОСЬ</h2>
+    <div class="timer">
+      <div><span id="days">0</span>дней</div>
+      <div><span id="hours">0</span>часов</div>
+      <div><span id="minutes">0</span>минут</div>
+      <div><span id="seconds">0</span>секунд</div>
+    </div>
+  </section>
+
+ <!-- Дресс-код -->
+<section id="dresscode">
+  <h2>ДРЕСС-КОД</h2>
+  <p class="lead">Для нас главное - Ваше присутствие!
+ <br>Но мы будем рады, если в своих нарядах Вы поддержите   </br>
+цветовую гамму нашей свадьбы</p>
+
+  <style>
+    /* Эффект наведения */
+    .palette .color {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .palette .color:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .palette .color img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+
+  <!-- Палитра цветов -->
+
+<!-- Галерея образов -->
+<style>
+ .palette {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px; /* минимальный зазор между изображениями */
+  justify-content: center; /* центрируем всю сетку */
+  justify-items: center;
+  align-items: center;
+  margin: 10px auto;
+  max-width: 470px; /* подогнано под три квадрата 155px */
+}
+
+.palette .color {
+  width: 155px; /* квадрат */
+  height: 155px;
+  overflow: hidden;
+  border-radius: 3px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.palette .color:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.palette .color img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 📱 Адаптивность */
+@media (max-width: 1024px) {
+  .palette {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    max-width: 310px;
+  }
+  .palette .color {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .palette {
+    grid-template-columns: 1fr;
+    gap: 1px;
+    max-width: 220px;
+  }
+  .palette .color {
+    width: 220px;
+    height: 220px;
+  }
+}
+</style>
+
+<div class="palette">
+  <div class="color"><img src="11.jpeg" alt=""></div>
+  <div class="color"><img src="22.jpeg" alt=""></div>
+  <div class="color"><img src="33.jpeg" alt=""></div>
+
+  <div class="color"><img src="44.jpeg" alt=""></div>
+  <div class="color"><img src="99.jpeg" alt="center"></div>
+  <div class="color"><img src="1111.jpg" alt=""></div>
+
+  <div class="color"><img src="66.jpeg" alt=""></div>
+  <div class="color"><img src="77.jpeg" alt=""></div>
+  <div class="color"><img src="88.jpeg" alt=""></div>
+</div>
+<!-- Блок с напоминанием -->
+<!-- Блок с напоминанием -->
+<div style="text-align: center; margin-top: 30px;">
+  <p style="font-size: 18px; line-height: 1.6;">
+    Просим выбирать вечерние наряды предложенных оттенков и по 
+<br>	возможности избегать одежду белого и черного цвета
+  </p></br>
+</div>
+
+<!-- Слайдер фото (женщины) -->
+<div class="slider" id="slider-girls">
+  <div class="slides">
+     <img src="pl25.png" alt="">
+    <img src="pl26.png" alt="">
+    <img src="pl27.png" alt="">
+    <img src="pl28.png" alt="">
+    <img src="pl29.png" alt="">
+    <img src="pl30.png" alt="">
+    <img src="pl31.png" alt="">
+    <img src="pl32.png" alt="">
+    <img src="pl34.png" alt="">
+    <img src="pl35.png" alt="">
+    <img src="pl36.png" alt="">
+    <img src="pl21.jpeg" alt="">
+    <img src="pl24.jpeg" alt="">
+    <img src="pl33.jpeg" alt="">
+    <img src="pl66.jpeg" alt="">
+  </div>
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+</div>
+
+<!-- ====== БЛОК ДЛЯ МУЖЧИН ====== -->
+<div style="text-align: center; margin-top: 50px;">
+  <h3 style="font-size: 22px; margin-bottom: 10px;"></h3>
+  <p style="font-size: 18px; line-height: 1.6; max-width: 600px; margin: 0 auto;">
+    Для мужчин уместным будет Total black <br> либо бежевый, серый низ и светлый верх.
+  </p></br>
+</div>
+
+<!-- Слайдер фото (мужчины) -->
+<div class="slider" id="slider-men">
+  <div class="slides">
+    <img src="k1.jpeg" alt="">
+    <img src="k21.png" alt="">
+    <img src="k24.png" alt="">
+    <img src="k4.jpeg" alt="">
+    <img src="k5.jpeg" alt="">
+    <img src="k6.jpeg" alt="">
+    <img src="k7.jpeg" alt="">
+    <img src="k23.png" alt="">
+    <img src="k9.jpeg" alt="">
+    <img src="k10.jpeg" alt="">
+    <img src="k13.jpeg" alt="">
+    <img src="k26.png" alt="">
+    <img src="k25.png" alt="">
+    <img src="k16.jpeg" alt="">
+    <img src="k17.jpeg" alt="">
+    <img src="k30.png" alt="">
+    <img src="k19.jpeg" alt="">
+  </div>
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+</div>
+
+<!-- СТИЛИ -->
+<style>
+  .slider {
+    position: relative;
+    width: 270px;
+    height: 390px;
+    margin: 25px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .slides {
+    display: flex;
+    width: max-content;
+    transition: transform 0.6s ease;
+  }
+
+  .slides img {
+    width: 270px;
+    height: 390px;
+    object-fit: cover; /* фото ровно под размер */
+    object-position: center;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+  }
+
+  .slider button:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .slider .prev {
+    left: 8px;
+  }
+
+  .slider .next {
+    right: 8px;
+  }
+</style>
+
+<script>
+  // ===== СЛАЙДЕР ДЛЯ ДЕВУШЕК =====
+  const sliderGirls = document.querySelector('#slider-girls .slides');
+  const imagesGirls = document.querySelectorAll('#slider-girls .slides img');
+  const prevGirls = document.querySelector('#slider-girls .prev');
+  const nextGirls = document.querySelector('#slider-girls .next');
+  let indexGirls = 0;
+
+  function showSlideGirls(i) {
+    if (i < 0) indexGirls = imagesGirls.length - 1;
+    else if (i >= imagesGirls.length) indexGirls = 0;
+    sliderGirls.style.transform = `translateX(-${indexGirls * 270}px)`;
+  }
+
+  prevGirls.addEventListener('click', () => {
+    indexGirls--;
+    showSlideGirls(indexGirls);
+  });
+
+  nextGirls.addEventListener('click', () => {
+    indexGirls++;
+    showSlideGirls(indexGirls);
+  });
+
+  setInterval(() => {
+    indexGirls++;
+    showSlideGirls(indexGirls);
+  }, 3000);
+
+
+  // ===== СЛАЙДЕР ДЛЯ МУЖЧИН =====
+  const sliderMen = document.querySelector('#slider-men .slides');
+  const imagesMen = document.querySelectorAll('#slider-men .slides img');
+  const prevMen = document.querySelector('#slider-men .prev');
+  const nextMen = document.querySelector('#slider-men .next');
+  let indexMen = 0;
+
+  function showSlideMen(i) {
+    if (i < 0) indexMen = imagesMen.length - 1;
+    else if (i >= imagesMen.length) indexMen = 0;
+    sliderMen.style.transform = `translateX(-${indexMen * 270}px)`;
+  }
+
+  prevMen.addEventListener('click', () => {
+    indexMen--;
+    showSlideMen(indexMen);
+  });
+
+  nextMen.addEventListener('click', () => {
+    indexMen++;
+    showSlideMen(indexMen);
+  });
+
+  setInterval(() => {
+    indexMen++;
+    showSlideMen(indexMen);
+  }, 3000);
+</script>
+
+
+
+ <!-- Детали торжества -->
+<section id="details">
+  <h2>ДЕТАЛИ ТОРЖЕСТВА</h2>
+  
+  <p>Приятным комплиментом будет для нас,<br>
+  если вместо цветов Вы решите подарить нам<br>
+  бутылку вина для нашей семейной винотеки.</p>
+  <div class="divider">
+    <svg viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,5 Q25,0 50,5 Q75,10 100,5" stroke="#b8b8b8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <p>Ваши улыбки и смех подарят<br>
+  нам незабываемое счастье в этот день,<br>
+  а пожелания в конвертах помогут осуществить наши мечты!</p>
+  <div class="divider">
+    <svg viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,5 Q25,0 50,5 Q75,10 100,5" stroke="#b8b8b8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <p>Несмотря на то, что мы очень любим детей,<br>
+  мы хотели бы в полной мере насладиться моментом праздника.<br>
+  Поэтому обращаем ваше внимание, что мы ждём гостей возраста +18.</p>
+</section>
+
+<style>
+  #details {
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+    line-height: 1.6;
+    font-weight: 400;
+    font-size: 22px;
+    color: #000;
+  }
+
+  #details h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  #details p {
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+
+  .divider {
+    margin: 15px auto 25px;
+    width: 120px;
+    opacity: 0.8;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
+
+  .divider:hover {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  .divider svg {
+    width: 100%;
+    height: 10px;
+  }
+</style>
+
+
+
+<!-- Анкета гостей + выбор напитков -->
+<form class="rsvp" id="weddingForm" action="https://formspree.io/f/xqagwlgr" method="POST">
+  <p><strong>Пожалуйста, подтвердите своё присутствие не позднее 25 мая 2026 года.</strong></p>
+
+  <p><em>Ваше присутствие на торжестве?</em></p>
+  <div class="radio-group">
+    <label><input type="radio" name="attend" value="Да, с удовольствием" checked> Да, с удовольствием</label>
+    <label><input type="radio" name="attend" value="К сожалению, не смогу присутствовать"> К сожалению, не смогу присутствовать</label>
+  </div>
+
+  <label>Ваше имя и фамилия</label>
+  <input type="text" name="guest_name" placeholder="Например: Ольга и Данил Ивановы" required>
+	<label>Ваш номер телефона</label>
+<input type="tel" name="guest_phone" placeholder="Например: +7 777 123 4567" required>
+
+  <p style="font-size:18px; color:rgba(0,0,0,0.6); margin-top:-5px;">
+    Если вы будете с парой или семьёй, внесите все имена.
+  </p>
+
+  <h5 style="text-align:center;margin-top:20px;">ЧТО ПРЕДПОЧИТАЕТЕ ИЗ НАПИТКОВ?</h5>
+  <div class="checkbox-group">
+    <label><input type="checkbox" name="drink" value="Вино белое полусладкое"> Вино белое полусладкое</label>
+    <label><input type="checkbox" name="drink" value="Вино белое полусухое"> Вино белое полусухое</label>
+    <label><input type="checkbox" name="drink" value="Вино красное полусладкое"> Вино красное полусладкое</label>
+    <label><input type="checkbox" name="drink" value="Вино красное полусухое"> Вино красное полусухое</label>
+    <label><input type="checkbox" name="drink" value="Шампанское"> Шампанское</label>
+    <label><input type="checkbox" name="drink" value="Водка"> Водка</label>
+    <label><input type="checkbox" name="drink" value="Виски"> Виски</label>
+    <label><input type="checkbox" name="drink" value="Коньяк"> Коньяк</label>
+    <label><input type="checkbox" name="drink" value="Безалкогольные напитки"> Безалкогольные напитки</label>
+  </div>
+
+  <input type="hidden" name="_subject" value="Новая анкета гостя — Свадьба Оли и Данила">
+
+  <button type="submit" class="btn">Отправить</button>
+</form>
+
+<!-- Всплывающее окно -->
+<div class="popup" id="popupMessage">💌 Ваш ответ отправлен! Спасибо!</div>
+
+<style>
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  color: #000;
+  padding: 25px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+  font-size: 20px;
+  text-align: center;
+  z-index: 1000;
+}
+.popup.show {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -45%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+</style>
+
+<script>
+document.getElementById("weddingForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Останавливаем стандартную отправку формы
+
+  const form = event.target;
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      document.getElementById("popupMessage").classList.add("show");
+      form.reset();
+      setTimeout(() => {
+        document.getElementById("popupMessage").classList.remove("show");
+      }, 3000);
+    } else {
+      alert("Ошибка при отправке. Попробуйте ещё раз.");
+    }
+  }).catch(() => alert("Ошибка соединения. Попробуйте позже."));
+});
+</script>
+
+<script>
+document.getElementById("weddingForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+
+  if (response.ok) {
+    form.reset();
+    const popup = document.getElementById("formSuccess");
+    popup.classList.add("show");
+    setTimeout(() => popup.classList.remove("show"), 4000); // исчезает через 4 секунды
+  } else {
+    alert("Произошла ошибка, попробуйте позже.");
+  }
+});
+</script>
+
+  </form>
+</section>
+
+
+  <!-- Музыка -->
+  <audio id="bg-music" autoplay loop playsinline>
+    <source src="march.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Таймер
+    const weddingDate = new Date("July 30, 2026 00:00:00").getTime();
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.querySelector("#countdown").innerHTML = "<h3>Свадьба состоялась!</h3>";
+      }
+    }, 1000);
+
+    // Форма
+    document.getElementById("weddingForm").addEventListener("submit", e => {
+      e.preventDefault();
+      document.getElementById("formSuccess").style.display = "block";
+    });
+  </script>
+
+
+</body>
+</html>

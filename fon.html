@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Выбор фона</title>
+
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: "Montserrat", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 40px;
+      font-size: 28px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .btn {
+      background-color: #6a5acd;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #483d8b;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .btn {
+        width: 80%;
+        font-size: 20px;
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Выберите фон страницы</h1>
+
+  <div class="button-container">
+    <a href="fon22.html" class="btn">Фон 1</a>
+    <a href="fon5.html" class="btn">Фон 2</a>
+    <a href="fon6.html" class="btn">Фон 3</a>
+    <a href="fon7.html" class="btn">Фон 4</a>
+  </div>
+
+</body>
+</html>
