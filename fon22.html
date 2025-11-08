@@ -847,31 +847,35 @@ document.addEventListener("DOMContentLoaded", function() {
   .palette .color {
     width: 150px;
     height: 150px;
+	object-fit: cover;
   }
 }
 
 @media (max-width: 768px) {
   .palette {
-    grid-template-columns: repeat(2, 1fr); /* на телефоне по 2 */
+    grid-template-columns: repeat(3, 1fr); /* на телефоне по 2 */
     gap: 8px;
-    max-width: 330px;
+    max-width: 480px;
   }
   .palette .color {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
+	  object-fit: cover;
   }
 }
 
 @media (max-width: 480px) {
   .palette {
-    grid-template-columns: 1fr; /* совсем узкий экран — по одному */
+   grid-template-columns: repeat(3, 1fr); /* по 3 в ряд даже на очень узких экранах */
+    gap: 6px;
+    max-width: 360px;
   }
   .palette .color {
-    width: 220px;
-    height: 220px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
   }
 }
-
 </style>
 
 <div class="palette">
@@ -1301,5 +1305,6 @@ document.getElementById("weddingForm").addEventListener("submit", async function
 
 </body>
 </html>
+
 
 
