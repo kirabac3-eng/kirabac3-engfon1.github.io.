@@ -51,7 +51,7 @@
 
 /* Основной стиль страницы */
 
-}
+
 
 /* ❤️ Анимация пульсирующего сердца */
 .heart {
@@ -84,6 +84,7 @@
      color: var(--text);
      font-family: 'EB Garamond', serif;
       text-align: center;
+	   font-size: 20px;
     }
 
 
@@ -153,21 +154,16 @@
       flex-wrap: wrap;
     }
 
-   .hero .face {
-  width: 200px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: none;
-  background: transparent; /* убираем белый фон */
+ .hero .face {
+  width: 280px; /* было 200px */
 }
-
 .hero .face img {
   width: 100%;
   aspect-ratio: 3/4;
+  border-radius: 12px;
   object-fit: cover;
-  border-radius: 10px;
-  display: block;
 }
+
 
 .hero .face .name {
   margin-top: 8px;
@@ -176,6 +172,9 @@
   color: #000; /* белый текст, если фон тёмный */
   font-family: 'EB Garamond', serif;
   text-shadow: 0 1px 3px rgba(0,0,0,0.1); /* чтобы текст читался */
+}
+ p.lead {
+  font-size: 20px; /* было 18px */
 }
 
 
@@ -432,10 +431,9 @@
 }
 
   </style>
-</head>
+
 
 <body>
-</script>
 
 <!-- 🎵 Музыка -->
 <audio id="bgMusic" loop>
@@ -502,6 +500,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
+
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
@@ -547,20 +546,66 @@ document.addEventListener("DOMContentLoaded", function() {
       </div>
     </div>
   </section>
+<style>
+.photos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; /* расстояние между фото */
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
 
+.face {
+  text-align: center;
+}
+
+.face img {
+  width: 340px;   /* было 280px — увеличили */
+  height: 340px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+}
+
+.face img:hover {
+  transform: scale(1.05);
+}
+
+.face .name {
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .face img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .face .name {
+    font-size: 20px;
+  }
+
+</stele>
 
 <!-- Место проведения -->
 <section id="place">
   <h2>МЕСТО ПРОВЕДЕНИЯ</h2>
   <div class="venue-info">
-    <p>Город Томск,Улица Сенная Курья, 9<br>Парад Парк Отель</p>
+    <p>Город Томск, Улица Сенная Курья, 9<br>Парад Парк Отель</p>
   </div>
 </section>
 
 <style>
   #place {
     text-align: center;
-    margin: 20px 0 10 px;
+     margin: 20px 0 10px;
   }
 
   #place h2 {
@@ -734,6 +779,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   <style>
     /* Эффект наведения */
+	#dresscode h2 {
+    color: #222 !important;;
+	} 
     .palette .color {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -755,41 +803,34 @@ document.addEventListener("DOMContentLoaded", function() {
 <style>
  .palette {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px; /* минимальный зазор между изображениями */
-  justify-content: center; /* центрируем всю сетку */
-  justify-items: center;
+  grid-template-columns: repeat(3, 1fr); /* по 3 в ряд */
+  gap: 10px;
+  justify-content: center;
   align-items: center;
-  margin: 10px auto;
-  max-width: 470px; /* подогнано под три квадрата 155px */
+  margin: 20px auto;
+  max-width: 550px; /* шире, чтобы фото не были сжаты */
 }
 
 .palette .color {
-  width: 155px; /* квадрат */
-  height: 155px;
+  width: 170px;
+  height: 170px;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 8px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.palette .color:hover {
-  transform: scale(1.02);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .palette .color img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* 📱 Адаптивность */
+/* 📱 Адаптация */
 @media (max-width: 1024px) {
   .palette {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    max-width: 310px;
+    grid-template-columns: repeat(3, 1fr); /* ✅ теперь и на планшетах 3 */
+    gap: 8px;
+    max-width: 520px;
   }
   .palette .color {
     width: 150px;
@@ -799,15 +840,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 @media (max-width: 768px) {
   .palette {
-    grid-template-columns: 1fr;
-    gap: 1px;
-    max-width: 220px;
+    grid-template-columns: repeat(2, 1fr); /* на телефоне по 2 */
+    gap: 8px;
+    max-width: 330px;
+  }
+  .palette .color {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .palette {
+    grid-template-columns: 1fr; /* совсем узкий экран — по одному */
   }
   .palette .color {
     width: 220px;
     height: 220px;
   }
 }
+
 </style>
 
 <div class="palette">
@@ -1084,7 +1136,7 @@ document.addEventListener("DOMContentLoaded", function() {
   <label>Ваше имя и фамилия</label>
   <input type="text" name="guest_name" placeholder="Например: Ольга и Данил Ивановы" required>
 	<label>Ваш номер телефона</label>
-<input type="tel" name="guest_phone" placeholder="Например: +7 777 123 4567" required>
+<input type="tel" name="guest_phone" placeholder="Например: +7 941 123 4567" required>
 
   <p style="font-size:18px; color:rgba(0,0,0,0.6); margin-top:-5px;">
     Если вы будете с парой или семьёй, внесите все имена.
