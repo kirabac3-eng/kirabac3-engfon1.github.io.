@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.3">
   <title>Свадьба</title>
   <style>
     
@@ -364,12 +365,29 @@
   color: #777; /* ← вот этот цвет сделает надписи серыми */
 }
 
-    @media(max-width:768px){
-      .hero .face { width: 150px; }
-      .day, .mark { width: 36px; height: 36px; }
-      .mark svg { width: 36px; height: 36px; }
-      .timer { flex-direction: column; gap:10px;}
-    }
+   @media (max-width: 768px) {
+  body {
+    font-size: 22px; /* было 20px — делаем крупнее текст */
+  }
+
+  h1.title {
+    font-size: 42px; /* увеличиваем главный заголовок */
+  }
+
+  .face img {
+    width: 300px; /* увеличиваем фото */
+    height: 300px;
+  }
+
+  .schedule-item .time {
+    font-size: 38px; /* крупнее время в расписании */
+  }
+
+  .schedule-item .event {
+    font-size: 24px;
+  }
+}
+
 	/* === АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ И ПЛАНШЕТЫ === */
 @media (max-width: 1024px) {
   .hero .wrap {
@@ -508,7 +526,6 @@ document.addEventListener("DOMContentLoaded", function() {
     <span class="date"></span>
 </h1>
 <div class="top-note">Узнаёте этих пупсов?</div>
-
       <div class="photos">
   <div class="face">
     <img src="d4.jpg" alt="Данил">
@@ -552,7 +569,7 @@ document.addEventListener("DOMContentLoaded", function() {
   justify-content: center;
   align-items: center;
   gap: 40px; /* расстояние между фото */
-  margin: 40px 0;
+  margin: 30px 0;
   flex-wrap: wrap;
 }
 
@@ -566,7 +583,7 @@ document.addEventListener("DOMContentLoaded", function() {
   object-fit: cover;
   border-radius: 50%;
   border: none;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  box-shadow: 0 0 0px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 
@@ -577,8 +594,8 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 .face .name {
-  margin-top: 15px;
-  font-size: 22px;
+  margin-top: 18px;
+  font-size: 27px;
   font-weight: 600;
 }
 
@@ -587,12 +604,7 @@ document.addEventListener("DOMContentLoaded", function() {
     width: 260px;
     height: 260px;
   }
-
-  .face .name {
-    font-size: 20px;
-  }
-
-</stele>
+</style>
 
 <!-- Место проведения -->
 <section id="place">
@@ -779,7 +791,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   <style>
     /* Эффект наведения */
-	#dresscode h2 {
+	#dresscode .lead {
     color: #222 !important;;
 	} 
     .palette .color {
