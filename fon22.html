@@ -610,7 +610,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <section id="place">
   <h2>МЕСТО ПРОВЕДЕНИЯ</h2>
   <div class="venue-info">
-    <p>Город Томск, Улица Сенная Курья, 9<br>Парад Парк Отель</p>
+    <p>Город Томск,  Улица Сенная Курья, 9<br>Парад Парк Отель</p>
   </div>
 </section>
 
@@ -813,69 +813,67 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <!-- Галерея образов -->
 <style>
- .palette {
+.palette {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* по 3 в ряд */
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;
-  max-width: 550px; /* шире, чтобы фото не были сжаты */
+  gap: 8px;
+  max-width: 520px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
 }
 
 .palette .color {
-  width: 170px;
-  height: 170px;
+  width: 150px;
+  height: 150px;
   overflow: hidden;
-  border-radius: 8px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .palette .color img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 /* 📱 Адаптация */
 @media (max-width: 1024px) {
   .palette {
-    grid-template-columns: repeat(3, 1fr); /* ✅ теперь и на планшетах 3 */
-    gap: 8px;
     max-width: 520px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
   }
   .palette .color {
     width: 150px;
     height: 150px;
-	object-fit: cover;
   }
 }
 
 @media (max-width: 768px) {
   .palette {
-    grid-template-columns: repeat(3, 1fr); /* на телефоне по 2 */
-    gap: 8px;
     max-width: 480px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
   }
   .palette .color {
     width: 120px;
     height: 120px;
-	  object-fit: cover;
   }
 }
 
 @media (max-width: 480px) {
   .palette {
-   grid-template-columns: repeat(3, 1fr); /* по 3 в ряд даже на очень узких экранах */
-    gap: 6px;
     max-width: 360px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
   }
   .palette .color {
     width: 100px;
     height: 100px;
-    object-fit: cover;
   }
 }
+
 </style>
 
 <div class="palette">
@@ -1305,6 +1303,7 @@ document.getElementById("weddingForm").addEventListener("submit", async function
 
 </body>
 </html>
+
 
 
 
