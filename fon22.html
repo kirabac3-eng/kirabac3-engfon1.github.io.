@@ -429,24 +429,26 @@
 
 @media (max-width: 480px) {
   .hero {
-    transform: scale(0.9);
-    transform-origin: top center;
+    display: flex;
+    justify-content: center; /* чтобы по центру */
+    gap: 5px; /* расстояние между фото */
+    flex-wrap: nowrap; /* чтобы не переносились на следующую строку */
   }
 
   .hero .face {
-    width: 250px;
-    max-width: 50vw;
+    width: 45vw; /* или фиксированная ширина, например 150px */
+    max-width: 150px;
     height: auto;
   }
 
   .hero .face img {
     width: 100%;
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
-    margin: 0 auto;
   }
 }
+
 
 
  .palette {
@@ -1332,6 +1334,7 @@ document.getElementById("weddingForm").addEventListener("submit", async function
 
 </body>
 </html>
+
 
 
 
