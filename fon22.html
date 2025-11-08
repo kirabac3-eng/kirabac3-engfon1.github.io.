@@ -449,13 +449,16 @@
 }
 
 
-  .palette {
-    grid-template-columns: 1fr;
-    max-width: 260px;
+ .palette {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 360px; /* или больше, в зависимости от ширины экрана */
+  gap: 6px;
   }
 
-  .palette .color {
-    width: 220px;
+ .palette .color {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
   }
 
   .slider {
@@ -1329,6 +1332,7 @@ document.getElementById("weddingForm").addEventListener("submit", async function
 
 </body>
 </html>
+
 
 
 
